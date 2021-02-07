@@ -73,11 +73,7 @@ body h3{
 .show{
   transform:translate3d(-270px,0,0);
 }
-.search{
-}
 #sbox1{
   margin-left: 10px;
   border-radius: 10px;
-}
-#sbtn{
 }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>展覧会の作成</title>
+    <link rel="stylesheet" href="create.css">
   </head>
   <body>
     <div id="wrapper" >
