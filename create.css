@@ -7,7 +7,6 @@ body{
     transition: transform 0.3s;
   }
   header{
-    background-image:url(home.JPG) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;

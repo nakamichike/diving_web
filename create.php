@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>展覧会の作成</title>
     <link rel="stylesheet" href="create.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
   <body>
     <div id="wrapper" >
