@@ -1,13 +1,18 @@
+<?php 
+require('dbconnect.php');
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>展覧会の作成</title>
-    <link rel="stylesheet" href="create.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  </head>
+<head>
+<meta charset="utf-8">
+<title>展覧会の作成</title>
+<link rel="stylesheet" href="create.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
   <body>
-    <div id="wrapper" >
       <header>
         <div class="header-logo">
           <h4>logo</h4>
@@ -21,30 +26,24 @@
       </header>
       <div class="contents">
         <form class="" action="create.php" method="post">
-          <input type="text" name="main-title" value="展覧会のタイトル">
-          <div class="content">
-            <input type="text" name="title-1" value="写真のタイトル">
-            <input type="file" name="img-1" value="">
-            <input type="text" name="text-1" value="説明文を書いてください">
-          </div>
-          <div class="content">
-            <input type="text" name="title-2" value="写真のタイトル">
-            <input type="file" name="img-2" value="">
-            <input type="text" name="text-2" value="説明文を書いてください">
-          </div>
-          <div class="content">
-            <input type="text" name="title-3" value="写真のタイトル">
-            <input type="file" name="img-3" value="">
-            <input type="text" name="text-3" value="説明文を書いてください">
-          </div>
-          <div class="content">
-            <input type="text" name="title-4" value="写真のタイトル">
-            <input type="file" name="img-4" value="">
-            <input type="text" name="text-4" value="説明文を書いてください">
-          </div>
+          <input type="text" name="main-title" placeholder="展覧会のタイトル">
+          <?php 
+            for ($i=1; $i < 5; $i++) { 
+              echo "<div class=\"content\">";
+              echo "<input type=\"text\" name=\"title-$i\" placeholder=\"写真のタイトル\" size=\"50px\">";
+              echo "<input type=\"file\" name=\"img-$i\">";
+              echo "<select name=\"season$i\">";
+              echo "<option value=\"spring\">春</option>";
+              echo "<option value=\"summer\">夏</option>";
+              echo "<option value=\"autumn\">秋</option>";
+              echo "<option value=\"winter\">冬</option>";
+              echo "</select>";
+              echo "<textarea  name=\"text-$i\" rows=\"4\" cols=\"40\" placeholder=\"説明文をあれば書いてください\" ></textarea>";
+              echo "</div>";
+            }
+          ?>
           <input type="submit" value="展示する">
         </form>
       </div>
-    </div>
   </body>
 </html>
